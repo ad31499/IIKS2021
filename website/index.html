@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IIKS_arduino</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+   
+
+
+</head>
+
+<body>
+    <div id="Head">
+        <div class="Logo">
+            <img src="Photo/Picture1.png" alt="Logo FE" style="width:200px">
+        </div>
+        <div class="Slogan">
+            <h3>Powered by Arduino and MQTT</h3>
+        </div>
+    </div>
+    <div class="cont">
+        <div id="myPlotDan" style="width:100%;max-width:800px">
+        </div>
+        <div id="myPlotTeden" style="width:100%;max-width:800px">
+        </div>
+    </div>
+
+    <div id="Leg">
+        <div class="MadeBy">
+            <h4>Made by Anže Dolenc for IIKS 2021</h4>
+        </div>
+        
+    </div>
+    
+</body>
+
+</html>
+
+
+<script>
+    
+    var tempDan = [21.3, 21.3, 21.7, 21.1, 22.0, 23.1, 22.5, 22.7, 22.5, 23.0, 23.5, 23.0, 22.5, 22.3, 22.0, 21.5, 22.4, 23.0, 22.3, 21.8, 21.8, 21.5, 22.0, 21.6];
+    var tempTeden = [21.5, 24.0, 22.0, 20.7, 22.8, 23.5, 22.5];
+    var ure = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
+    var dan = [13, 14, 15, 16, 17, 18, 19]; 
+    var danString = ['Pon', 'Tor', 'Sre', 'Čet', 'Pet', 'Sob', 'Ned'];
+    
+
+    function graf(rangeX, rangeY, titleX, titleY, title, seznamUre, seznamTemp, poz) {
+
+        var data = [{
+            x: seznamUre,
+            y: seznamTemp,
+            type: "scatter"
+        }];
+
+        var layout = {
+            xaxis: { range: rangeX, title: titleX },
+            yaxis: { range: rangeY, title: titleY },
+            title: title
+        };
+
+        Plotly.newPlot(poz, data, layout);
+    }
+
+    graf([0, 24], [15, 30], "Ura", "Temperatura", "Temperatura doma - Danes", ure, tempDan, "myPlotDan"); //Graf za en dan
+    graf([0, 7], [15, 30], "Dan", "Temperatura", "Temperatura doma - Zadnji teden", danString, tempTeden, "myPlotTeden"); //Graf za en teden
+
+</script>

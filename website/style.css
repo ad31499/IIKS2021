@@ -1,0 +1,41 @@
+
+
+.cont {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 800px;
+
+}
+
+#Head {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    height: 40px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.Logo {
+    padding-left: 200px;
+    margin-right: 1000px;
+}
+
+.Slogan {
+    padding-right: 200px;
+    color: #E64216;
+    margin-top: 50px;
+}
+
+#Leg{
+    margin: 0 auto;
+    width: 100%;
+    background-color: #bae3f5;
+}
+
+.MadeBy {
+    margin: auto;
+    margin-left: 45%;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
